@@ -9,10 +9,15 @@
 #include "MyString.h"
 using namespace std;
 
-/*
+/**/
 int main() {
-    cout << "Hello, World!" << endl;
-    std::cout << __cplusplus << std::endl;
-    return 0;
+
+	MyString s1;
+	s1.print();
+	
+	MyString s2("Bubu");
+	s2.print();
+
+  return 0;
 }
 /**/

@@ -7,6 +7,4 @@
 
 #include <src/MyString.h>
 
-namespace std {
-
-} /* namespace std */
+using namespace std;
