@@ -3,11 +3,6 @@ String Class in C++. Exercise from FHNW.
 
 ## How to compile with the terminal
 ```
-make main.cpp
-./main
-```
-
-```
-g++ main.cpp -o main
-./main
+g++ ./src/main.cpp -o run.out
+./run.out 
 ```
