@@ -9,8 +9,10 @@
 #include "MyString.h"
 using namespace std;
 
+/*
 int main() {
     cout << "Hello, World!" << endl;
     std::cout << __cplusplus << std::endl;
     return 0;
 }
+/**/
