@@ -12,11 +12,11 @@ using namespace std;
 /**/
 int main() {
 
-	MyString s1;
-	s1.print();
+//	MyString s1;
+//	s1.print();
 	
 	MyString s2("Bubu");
-	s2.print();
+//	s2.print();
 
   return 0;
 }
