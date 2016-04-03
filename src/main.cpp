@@ -13,13 +13,23 @@ using namespace std;
 /**/
 int main() {
 
-//    MyString s1;
+    MyString s0;
+    MyString s1("");
     MyString s21("Bubu");
-    MyString s31("ASDF");
+    MyString s31("Bubu!");
     MyString s22(s21);
     MyString s32(s21);
 
+    // Length
+//    cout << s0.length() << endl;
+//    cout << s1.length() << endl;
+//    cout << s21.length() << endl;
+//    cout << s31.length() << endl;
+//    cout << s22.length() << endl;
+//    cout << s32.length() << endl;
+
     // CharAT
+//    cout << s0.charAt(0) << endl;
 //    cout << s1.charAt(0) << endl;
 //    cout << s21.charAt(0) << endl;
 //    cout << s21.charAt(1) << endl;
@@ -29,10 +39,20 @@ int main() {
 //    cout << s22.charAt(0) << endl;
 
     // Compare To
-    cout << s21.compareTo(s21) << endl;
-    cout << s21.compareTo(s31) << endl;
-    cout << s31.compareTo(s21) << endl;
+//    cout << s21.compareTo(s21) << endl;
+//    cout << s21.compareTo(s31) << endl;
+//    cout << s31.compareTo(s21) << endl;
 
+    // ConcatTo
+//    MyString s41 = s21.concat(s21);
+//    MyString s42 = s21.concat('!');
+//    cout << s41.charAt(0) << endl;
+//    cout << s41.charAt(4) << endl;
+//    cout << s42.charAt(4) << endl;
+
+    //Substring
+    MyString s51 = s21.subString(1, 4);
+    s51.print();
 
     return 0;
 }

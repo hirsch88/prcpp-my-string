@@ -6,7 +6,6 @@
  */
 
 #include <iostream>
-#include <memory>
 #include "MyString.h"
 
 using namespace std;
@@ -45,6 +44,14 @@ MyString::~MyString() {
     // TODO Auto-generated destructor stub
 }
 
+void MyString::print() {
+    std::cout << m_string << std::endl;
+}
+
+size_t MyString::length() const {
+    return m_len;
+}
+
 char MyString::charAt(size_t index) const {
     if (index < 0 || index > (m_len - 1)) {
         throw out_of_range("Invalid Index");
@@ -54,22 +61,65 @@ char MyString::charAt(size_t index) const {
 
 int MyString::compareTo(const MyString &s) const {
     int idx = 0;
-    size_t minLen;
-
-    minLen = this->m_len > s.m_len ? this->m_len : s.m_len;
-    while (idx < (minLen-1) && s.charAt(idx) == this->charAt(idx)) {
+    size_t minLen = (this->m_len < s.m_len) ? this->m_len : s.m_len;
+    while (idx < minLen && s.charAt(idx) == this->charAt(idx)) {
         idx++;
     }
 
-    if (s.charAt(idx) < this->charAt(idx)) {
+    if (minLen == idx && this->m_len != s.m_len) {
+        return (this->m_len > s.m_len) ? -1 : 1;
+    }
+
+    if (s.m_string[idx] < m_string[idx]) {
         return 1;
     }
 
-    if (s.charAt(idx) > this->charAt(idx)) {
+    if (s.m_string[idx] > m_string[idx]) {
         return -1;
     }
 
     return 0;
 }
 
+MyString MyString::concat(char c) const {
+    char *newString = new char(m_len + 1);
+    for (int i = 0; i < m_len; ++i) {
+        newString[i] = m_string[i];
+    }
+    newString[m_len] = c;
+    return MyString(newString);
+}
 
+MyString MyString::concat(const MyString &s) const {
+    int len = (int) (m_len + s.m_len);
+    char *newString = new char(len);
+
+    int i = 0;
+    while (i < m_len) {
+        newString[i] = m_string[i];
+        i++;
+    }
+
+    int k = 0;
+    int n = (int) m_len;
+    while (k < len) {
+        newString[n] = s.m_string[k];
+        k++;
+        n++;
+    }
+
+    return MyString(newString);
+}
+
+MyString MyString::subString(size_t beg, size_t end) const {
+    int len = (int) (end - beg);
+    char *newString = new char(len);
+
+    int i = 0;
+    while (i < len) {
+        newString[i] = m_string[beg];
+        beg++;
+        i++;
+    }
+    return MyString(newString);
+}
