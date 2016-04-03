@@ -96,16 +96,13 @@ MyString MyString::concat(const MyString &s) const {
 
     int i = 0;
     while (i < m_len) {
-        newString[i] = m_string[i];
-        i++;
+        newString[i] = m_string[i++];
     }
 
     int k = 0;
     int n = (int) m_len;
     while (k < len) {
-        newString[n] = s.m_string[k];
-        k++;
-        n++;
+        newString[n++] = s.m_string[k++];
     }
 
     return MyString(newString);
