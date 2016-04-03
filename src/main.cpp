@@ -7,17 +7,33 @@
 
 #include <iostream>
 #include "MyString.h"
+
 using namespace std;
 
 /**/
 int main() {
 
-//	MyString s1;
-//	s1.print();
-	
-	MyString s2("Bubu");
-//	s2.print();
+//    MyString s1;
+    MyString s21("Bubu");
+    MyString s31("ASDF");
+    MyString s22(s21);
+    MyString s32(s21);
 
-  return 0;
+    // CharAT
+//    cout << s1.charAt(0) << endl;
+//    cout << s21.charAt(0) << endl;
+//    cout << s21.charAt(1) << endl;
+//    cout << s21.charAt(2) << endl;
+//    cout << s21.charAt(3) << endl;
+//    cout << s21.charAt(4) << endl;
+//    cout << s22.charAt(0) << endl;
+
+    // Compare To
+    cout << s21.compareTo(s21) << endl;
+    cout << s21.compareTo(s31) << endl;
+    cout << s31.compareTo(s21) << endl;
+
+
+    return 0;
 }
 /**/

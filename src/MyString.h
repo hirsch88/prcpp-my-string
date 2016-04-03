@@ -31,7 +31,9 @@ class MyString final {
 	virtual ~MyString();
 
 	// Methoden
-	void print();
+    char charAt(size_t index) const;
+    int compareTo(const MyString& s) const;
+    
 
 };
 
