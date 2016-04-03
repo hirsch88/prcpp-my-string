@@ -114,9 +114,7 @@ MyString MyString::subString(size_t beg, size_t end) const {
 
     int i = 0;
     while (i < len) {
-        newString[i] = m_string[beg];
-        beg++;
-        i++;
+        newString[i++] = m_string[beg++];
     }
     return MyString(newString);
 }
