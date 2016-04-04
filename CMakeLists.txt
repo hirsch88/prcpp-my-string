@@ -33,8 +33,8 @@ set(SOURCE_FILES
     src/main.cpp
     src/MyString.cpp
     src/MyString.h
-    src/MyString_test.cpp
     src/Test.cpp
+    src/Test_CUTE.cpp
     MyString.xml
     README.md
     run.out)
