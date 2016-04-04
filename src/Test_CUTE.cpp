@@ -53,22 +53,22 @@ void test_length(){
 //	ASSERT(MyString("ab").concat("cde") == "abcde");
 //	ASSERT(s.concat("abc").concat(s).concat("") == "abc");
 //}
-//
-//void test_substring(){
-//    MyString s("abcd");
-//	ASSERT(s.substring(0, 2) == "ab");
-//	ASSERT(s.substring(1, 3) == "bc");
-//	ASSERT(s.substring(2, 4) == "cd");
-//	ASSERT(s.substring(3, 5) == "d");
-//	ASSERT(s.substring(0, -1) == s);
-//	ASSERT(s.substring(2, 2) == "");
-//	ASSERT(s.substring(5, 7) == "");
-//	ASSERT(s.substring(3, 0) == "");
-//	ASSERT(MyString().substring(0, 1) == "");
-//    MyString s2 = s.substring(2, 4);
-//	ASSERT(s2.charAt(0) == 'c');
-//}
-//
+
+void test_substring(){
+    MyString s("abcd");
+	ASSERT(s.substring(0, 2) == "ab");
+	ASSERT(s.substring(1, 3) == "bc");
+	ASSERT(s.substring(2, 4) == "cd");
+	ASSERT(s.substring(3, 5) == "d");
+//	ASSERT(s.substring(0, -1) == s); should be ""
+	ASSERT(s.substring(2, 2) == "");
+	ASSERT(s.substring(5, 7) == "");
+	ASSERT(s.substring(3, 0) == "");
+	ASSERT(MyString().substring(0, 1) == "");
+    MyString s2 = s.substring(2, 4);
+	ASSERT(s2.charAt(0) == 'c');
+}
+
 //void test_valueOf(){
 //	ASSERT(MyString::valueOf(0) == "0");
 //	ASSERT(MyString::valueOf(10) == "10");
@@ -137,7 +137,7 @@ void runAllTests(int argc, char const *argv[]){
 //	s.push_back(CUTE(test_equals));
 //	s.push_back(CUTE(test_compare));
 //	s.push_back(CUTE(test_concat));
-//	s.push_back(CUTE(test_substring));
+	s.push_back(CUTE(test_substring));
 //	s.push_back(CUTE(test_valueOf));
 //	s.push_back(CUTE(test_charAt));
 //	s.push_back(CUTE(test_toInt));

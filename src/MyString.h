@@ -35,7 +35,7 @@ public:
 
     size_t length() const;
 
-    char charAt(size_t index) const;
+    char charAt(const size_t index) const;
 
     int compareTo(const MyString &s) const;
 
@@ -43,23 +43,23 @@ public:
 
     MyString concat(const MyString &s) const;
 
-    MyString subString(size_t beg, size_t end) const;
+    MyString substring(size_t beg, size_t end) const;
 
 
     // Gleichheitsoperator (Inline-Implementation schon gegeben)
-//    bool operator==(const MyString &s) const {
-//        return compareTo(s) == 0;
-//    }
-//
-//    // Zuweisungsoperator
-//    MyString &operator=(MyString const &rh) {
-//        return *this;
-//    }
+    bool operator==(const MyString &s) const {
+        return compareTo(s) == 0;
+    }
+
+    // Zuweisungsoperator
+    MyString &operator=(MyString const &rh) {
+        return *this;
+    }
 
     // Indexoperator -> CharAt
-//    char operator[](size_t const &index) const {
-//        return charAt(index);
-//    }
+    char operator[](size_t const &index) const {
+        return charAt(index);
+    }
 
     // Ausgabe-Operator für Output-Streams (Inline-Implementation schon gegeben)
 //    friend ostream &operator<<(ostream &os, const MyString &s) {

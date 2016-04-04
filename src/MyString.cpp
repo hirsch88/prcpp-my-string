@@ -11,7 +11,7 @@
 using namespace std;
 
 // Standardkonstruktor
-MyString::MyString() : m_len(0), m_start(0), m_string(nullptr) { }
+MyString::MyString() : m_len(0), m_start(0), m_string(new char(0)) { }
 
 // Kopierkonstruktor
 MyString::MyString(const MyString &s) : m_len(s.m_len), m_start(s.m_start), m_string(s.m_string) { }
@@ -41,7 +41,7 @@ MyString::MyString(const char *s) : m_start(0), m_len(0) {
 
 // Dekonstruktor
 MyString::~MyString() {
-    // TODO Auto-generated destructor stub
+    m_string = nullptr;
 }
 
 void MyString::print() {
@@ -52,7 +52,7 @@ size_t MyString::length() const {
     return m_len;
 }
 
-char MyString::charAt(size_t index) const {
+char MyString::charAt(const size_t index) const {
     if (index < 0 || index > (m_len - 1)) {
         throw out_of_range("Invalid Index");
     }
@@ -108,9 +108,13 @@ MyString MyString::concat(const MyString &s) const {
     return MyString(newString);
 }
 
-MyString MyString::subString(size_t beg, size_t end) const {
+MyString MyString::substring(size_t beg, size_t end) const {
     int len = (int) (end - beg);
     char *newString = new char(len);
+
+    if(len <= 0){
+        return MyString("");
+    }
 
     int i = 0;
     while (i < len) {

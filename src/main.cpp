@@ -50,7 +50,7 @@
 //    s42.print();
 //
 //    //Substring
-//    MyString s51 = s21.subString(1, 4);
+//    MyString s51 = s21.substring(1, 4);
 //    s51.print();
 //
 //    return 0;
