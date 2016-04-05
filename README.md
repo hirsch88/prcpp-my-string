@@ -1,11 +1,14 @@
 # prcpp-my-string
 String Class in C++. Exercise from FHNW.
 
-##
+## Warning
 Unfortunately I could not use the following code, because I am working with the libc++ compiler.
 ```
 m_string = shared_ptr<char>(unique_ptr<char[]>(new char[gewenschteLaenge]));
 ```
+
+## Tests
+
 
 ## How to compile with the terminal
 ### Run your code
