@@ -17,7 +17,8 @@ class MyString final {
     // private Datenstruktur
     size_t m_len;
     size_t m_start;
-//	shared_ptr<char> m_string;
+	shared_ptr<char> m_stringS;
+	unique_ptr<char[]> m_stringU;
     char *m_string;
 
 public:
@@ -38,6 +39,10 @@ public:
     char charAt(const size_t index) const;
 
     int compareTo(const MyString &s) const;
+
+    int toInt() const;
+
+    unique_ptr<char[]> toCString() const;
 
     MyString concat(char c) const;
 
@@ -62,15 +67,15 @@ public:
     }
 
     // Ausgabe-Operator für Output-Streams (Inline-Implementation schon gegeben)
-//    friend ostream &operator<<(ostream &os, const MyString &s) {
-//        const size_t end = s.m_start + s.m_len;
-//        const char *const sc = s.m_string.get();
-//        for (size_t i = s.m_start; i < end; i++) os << sc[i];
-//        return os;
-//    }
+    friend ostream &operator<<(ostream &os, const MyString &s) {
+        const size_t end = s.m_start + s.m_len;
+        const char *const sc = s.m_stringS.get();
+        for (size_t i = s.m_start; i < end; i++) os << sc[i];
+        return os;
+    }
 
     // Klassen-Methode
-//    static MyString valueOf(int i); // erzeugt eine String-Repräsentation von i
+    static MyString valueOf(int i); // erzeugt eine String-Repräsentation von i
 
 };
 

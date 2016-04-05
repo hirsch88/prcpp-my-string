@@ -1,4 +1,3 @@
-src/MyString.o: ../src/MyString.cpp \
-  /Users/hirsch/Documents/fhnw/prcpp/my-string/MyString/src/MyString.h
+src/MyString.o: ../src/MyString.cpp ../src/MyString.h
 
-/Users/hirsch/Documents/fhnw/prcpp/my-string/MyString/src/MyString.h:
+../src/MyString.h:

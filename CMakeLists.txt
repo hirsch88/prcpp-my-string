@@ -35,8 +35,6 @@ set(SOURCE_FILES
     src/MyString.h
     src/Test.cpp
     src/Test_CUTE.cpp
-    MyString.xml
-    README.md
-    run.out)
+    MyString.xml)
 
 add_executable(MyString ${SOURCE_FILES})
