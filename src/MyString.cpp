@@ -80,7 +80,7 @@ int MyString::compareTo(const MyString &s) const {
     }
 
     if (minLen == idx && this->m_len != s.m_len) {
-        return (this->m_len > s.m_len) ? -1 : 1;
+        return (this->m_len > s.m_len) ? 1 : -1;
     }
 
     if (s.m_string[idx] < m_string[idx]) {
@@ -122,16 +122,19 @@ MyString MyString::concat(const MyString &s) const {
 
     int i = 0;
     while (i < m_len) {
-        newString[i] = m_string[i++];
+        newString[i] = m_string[i];
+        i++;
     }
 
     int k = 0;
     int n = (int) m_len;
     while (k < len) {
-        newString[n++] = s.m_string[k++];
+        newString[n] = s.m_string[k];
+        k++;
+        n++;
     }
 
-    return move(MyString(newString));
+    return MyString(newString);
 }
 
 MyString MyString::substring(size_t beg, size_t end) const {
@@ -192,9 +195,10 @@ MyString MyString::valueOf(int i) {
     char *s = new char[size];
     if(isNegative){
         *(s + j++) = '-';
+        --size;
     }
     int k = size - 1;
-    while (j < size) {
+    while (j <= size && k >=0) {
         *(s + j++) = arr[k--] + 48;
     }
 

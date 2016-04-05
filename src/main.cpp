@@ -10,7 +10,7 @@
 
 using namespace std;
 
-/**
+/**/
 int main() {
 
     MyString s0;
@@ -39,11 +39,14 @@ int main() {
 //    cout << s22.charAt(0) << endl;
 
 //    // Compare To
-//    cout << s21.compareTo(s21) << endl;
+//    MyString s("abc");
+//    cout << s.compareTo("abcd") << endl;
 //    cout << s21.compareTo(s31) << endl;
 //    cout << s31.compareTo(s21) << endl;
 //
-//    // ConcatTo
+    // ConcatTo
+    MyString sc("a");
+    cout << sc.concat("") << endl;
 //    MyString s41 = s21.concat(s21);
 //    MyString s42 = s21.concat('!');
 //    s41.print();
@@ -57,8 +60,8 @@ int main() {
 //    MyString s61 = MyString::valueOf(-0);
 //    s61.print();
 
-    MyString s62 = MyString::valueOf(-10);
-    s62.print();
+//    MyString s62 = MyString::valueOf(0);
+//    s62.print();
 
     // ToInt
 //    MyString s71 = MyString("123");
