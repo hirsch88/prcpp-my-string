@@ -6,6 +6,7 @@
  */
 
 #include <iostream>
+#include <memory>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -23,8 +24,14 @@ MyString::MyString(const MyString &s) : m_len(s.m_len), m_start(s.m_start), m_st
 // Typkonvertierungskonstruktor
 MyString::MyString(const char *s) : m_start(0), m_len(0) {
 
+    // Länge berrechnen
+    while(s[m_len] != '\0'){
+        m_len++;
+    }
+
+    shared_ptr<char> ptr (unique_ptr<char[]>(new char[m_len]));
+
     // Normal Pointer
-    m_len = strlen(s);
     m_string = new char(m_len);
     for (int i = 0; i < m_len; ++i) {
         m_string[i] = s[i];
