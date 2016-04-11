@@ -29,7 +29,7 @@ MyString::MyString(const char *s) : m_start(0), m_len(0) {
         m_len++;
     }
 
-    shared_ptr<char> ptr (unique_ptr<char[]>(new char[m_len]));
+//    shared_ptr<char> ptr (unique_ptr<char[]>(new char[m_len]));
 
     // Normal Pointer
     m_string = new char(m_len);

@@ -10,7 +10,7 @@
 
 using namespace std;
 
-/**/
+/**
 int main() {
 
     MyString s0;
